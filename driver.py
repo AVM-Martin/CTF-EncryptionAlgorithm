@@ -1,4 +1,5 @@
 from Caesar import *
+from CBC import *
 from DES import *
 from Transposition import *
 
@@ -41,4 +42,32 @@ if __name__ == "__main__":
 		key = 0x133457799BBCDFF1,
 		text = 0x0123456789ABCDEF,
 		ciphertext = 0x85E813540F0AB405,
+	)
+
+	driver(
+		CBC,
+		key = {"key": 0xB, "shift": 1, "C": 0x0, "block": 1},
+		text = 0xA23A9,
+		ciphertext = 0x27FDF,
+	)
+
+	driver(
+		CBC,
+		key = {"key": 0xA, "shift": 2, "C": 0x3, "block": 1},
+		text = 0x1823A,
+		ciphertext = 0x202EB,
+	)
+
+	driver(
+		CBC,
+		key = {"key": 0xC9F, "shift": 4*3 - 3, "C": 0x000, "block": 3},
+		text = 0xC264A676E55A123,
+		ciphertext = 0x217D458D6622D73,
+	)
+
+	driver(
+		ECB,
+		key = {"key" : 0xB, "shift": 1, "block": 1},
+		text = 0xA23A9,
+		ciphertext = 0x23124,
 	)
