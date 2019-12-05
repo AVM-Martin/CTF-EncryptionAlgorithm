@@ -1,3 +1,4 @@
+from AES import *
 from Caesar import *
 from CBC import *
 from DES import *
@@ -70,4 +71,18 @@ if __name__ == "__main__":
 		key = {"key" : 0xB, "shift": 1, "block": 1},
 		text = 0xA23A9,
 		ciphertext = 0x23124,
+	)
+
+	driver(
+		AES,
+		key = 0x133457799BBCDFF1133457799BBCDFF1,
+		text = 0x0123456789ABCDEF0123456789ABCDEF,
+		ciphertext = 0x2EB94DFF3CCCDB52022C4D9906B5B848,
+	)
+
+	driver(
+		AES,
+		key = 0x0F1571C947D9E8590CB7ADD6AF7F6798,
+		text = 0x0123456789ABCDEFFEDCBA9876543210,
+		ciphertext = 0xFF0B844A0853BF7C6934AB4364148FB9,
 	)
