@@ -1,3 +1,4 @@
+from Caesar import *
 from Transposition import *
 
 
@@ -25,4 +26,11 @@ if __name__ == "__main__":
 		key = (2,0,3,4,1,),
 		text = "enemyattackstonightz",
 		ciphertext = "tiyteaozhmcseangtktn",
+	)
+
+	driver(
+		Caesar,
+		key = 2,
+		text = "EASY TO BREAK",
+		ciphertext = "GCUA VQ DTGCM",
 	)
