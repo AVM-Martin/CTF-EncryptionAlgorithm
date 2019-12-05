@@ -1,6 +1,6 @@
 # CTF-EncryptionAlgorithm
 
-This repository includes all algorithms in MATH6067 -- Cryptography course in Binus University
+This repository includes implementation of all cryptography algorithms taught in MATH6067 course from Binus University
 
 
 ### Algorithms list:
