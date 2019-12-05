@@ -1,4 +1,5 @@
 from Caesar import *
+from DES import *
 from Transposition import *
 
 
@@ -33,4 +34,11 @@ if __name__ == "__main__":
 		key = 2,
 		text = "EASY TO BREAK",
 		ciphertext = "GCUA VQ DTGCM",
+	)
+
+	driver(
+		DES,
+		key = 0x133457799BBCDFF1,
+		text = 0x0123456789ABCDEF,
+		ciphertext = 0x85E813540F0AB405,
 	)
