@@ -1,6 +1,6 @@
 from helper import Cryptography
 
-from DES import constant, helper
+from DES import constants, helper
 
 
 class DES(Cryptography):
@@ -10,8 +10,8 @@ class DES(Cryptography):
 
 		self.key = []
 		for i in range(16):
-			C = helper.shift_left(C, constant.round_shifts[i])
-			D = helper.shift_left(D, constant.round_shifts[i])
+			C = helper.shift_left(C, constants.round_shifts[i])
+			D = helper.shift_left(D, constants.round_shifts[i])
 			self.key.append(helper.permute_PC2((C << 28) | D))
 
 	def encrypt(self, text):
