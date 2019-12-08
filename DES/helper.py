@@ -60,7 +60,7 @@ def expand(s):
 def sbox(s, idx):
 	x = ((s >> 4) & 0x2) | (s & 0x1)
 	y = (s >> 1) & 0xF
-	return constants.SBOX[idx][x][y]
+	return constants.SBOX[(idx << 6) | (x << 4) | y]
 
 
 def feistel(s, K):

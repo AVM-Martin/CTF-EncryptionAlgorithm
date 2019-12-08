@@ -21,11 +21,11 @@ def transpose(s):
 
 
 def substitute_bytes(s):
-	return constants.SBOX[(s >> 4) & 0xF][s & 0xF]
+	return constants.SBOX[s]
 
 
 def substitute_bytes_inverse(s):
-	return constants.RSBOX[(s >> 4) & 0xF][s & 0xF]
+	return constants.RSBOX[s]
 
 
 def shift_rows(data):
