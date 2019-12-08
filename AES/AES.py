@@ -28,21 +28,15 @@ class AES(Cryptography):
 		text = helper.transpose(text)
 		text = helper.xor(text, self.key[0])
 
-		for rounds in range(1, 10, 1):
+		for rounds in range(1, 11, 1):
 			text = [
 				[ helper.substitute_bytes(x) for x in row ]
 				for row in text
 			]
 			text = helper.shift_rows(text)
-			text = helper.mix_columns(text)
+			if rounds != 10:
+				text = helper.mix_columns(text)
 			text = helper.xor(text, self.key[rounds])
-
-		text = [
-			[ helper.substitute_bytes(x) for x in row ]
-			for row in text
-		]
-		text = helper.shift_rows(text)
-		text = helper.xor(text, self.key[-1])
 
 		text = helper.transpose(text)
 		return helper.decompose_from_matrix(text)
@@ -51,16 +45,10 @@ class AES(Cryptography):
 		text = helper.decompose_to_matrix(text)
 		text = helper.transpose(text)
 
-		text = helper.xor(text, self.key[-1])
-		text = helper.shift_rows_inverse(text)
-		text = [
-			[ helper.substitute_bytes_inverse(x) for x in row ]
-			for row in text
-		]
-
-		for rounds in range(9, 0, -1):
+		for rounds in range(10, 0, -1):
 			text = helper.xor(text, self.key[rounds])
-			text = helper.mix_columns_inverse(text)
+			if rounds != 10:
+				text = helper.mix_columns_inverse(text)
 			text = helper.shift_rows_inverse(text)
 			text = [
 				[ helper.substitute_bytes_inverse(x) for x in row ]
