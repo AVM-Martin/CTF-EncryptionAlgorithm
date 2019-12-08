@@ -66,4 +66,4 @@ def mix_columns_inverse(s):
 
 
 def xor(a, b):
-	return [ [ a[i][j] ^ b[i][j] for j in range(4) ] for i in range(4) ]
+	return [ [p ^ q for p,q in zip(x,y)] for x,y in zip(a, b)]
