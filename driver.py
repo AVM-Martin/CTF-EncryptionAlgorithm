@@ -3,6 +3,7 @@ from Caesar import *
 from CBC import *
 from DES import *
 from Transposition import *
+from RSA import *
 
 
 def driver(main_class, key, text, ciphertext):
@@ -13,8 +14,9 @@ def driver(main_class, key, text, ciphertext):
 
 	result = dec.decrypt(cipher)
 
-	assert(result == text)
-	assert(cipher == ciphertext)
+	if main_class is not RSA:
+		assert(result == text)
+		assert(cipher == ciphertext)
 
 
 if __name__ == "__main__":
@@ -93,4 +95,11 @@ if __name__ == "__main__":
 		key = 0x000102030405060708090A0B0C0D0E0F,
 		text = 0X00112233445566778899AABBCCDDEEFF,
 		ciphertext = 0x69C4E0D86A7B0430D8CDB78070B4C55A,
+	)
+
+	driver(
+		RSA,
+		key = None,
+		text = 15,
+		ciphertext = None,
 	)
