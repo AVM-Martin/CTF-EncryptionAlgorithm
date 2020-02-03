@@ -33,3 +33,6 @@ class DES(Cryptography):
 			L,R = R, L ^ helper.feistel(R, self.key[i])
 
 		return helper.permute_inverse((R << 32) | L)
+
+	def get_key(self):
+		return self.KEY

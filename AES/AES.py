@@ -61,3 +61,6 @@ class AES(Cryptography):
 
 		text = helper.transpose(text)
 		return helper.decompose_from_matrix(text)
+
+	def get_key(self):
+		return self.KEY

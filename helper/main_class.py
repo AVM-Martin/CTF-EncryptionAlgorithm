@@ -1,6 +1,5 @@
 class Cryptography():
 	def __init__(self, key):
-		self.KEY = key
 		self.key = key
 
 	def encrypt(self, text):
@@ -10,4 +9,4 @@ class Cryptography():
 		return text
 
 	def get_key(self):
-		return self.KEY
+		return self.key
