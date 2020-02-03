@@ -5,6 +5,8 @@ from AES import helper
 
 class AES(Cryptography):
 	def __init__(self, key):
+		self.KEY = key
+
 		key = helper.decompose_to_matrix(key)
 		RCON = [ 0x01, 0x00, 0x00, 0x00 ]
 

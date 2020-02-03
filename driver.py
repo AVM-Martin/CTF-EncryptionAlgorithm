@@ -6,11 +6,12 @@ from Transposition import *
 
 
 def driver(main_class, key, text, ciphertext):
-	enc = main_class(key)
+	dec = main_class(key)
+
+	enc = main_class(dec.get_key())
 	cipher = enc.encrypt(text)
 
-	dec = main_class(key)
-	result = dec.decrypt(ciphertext)
+	result = dec.decrypt(cipher)
 
 	assert(result == text)
 	assert(cipher == ciphertext)

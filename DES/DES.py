@@ -5,6 +5,8 @@ from DES import constants, helper
 
 class DES(Cryptography):
 	def __init__(self, key):
+		self.KEY = key
+
 		key = helper.permute_PC1(key)
 		C,D = helper.split(key, 56)
 
