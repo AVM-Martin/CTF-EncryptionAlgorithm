@@ -10,3 +10,4 @@ This repository includes implementation of all cryptography algorithms taught in
   * DES
   * CBC (and ECB)
   * AES
+  * RSA
